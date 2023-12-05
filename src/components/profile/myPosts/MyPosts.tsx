@@ -1,13 +1,13 @@
 import React from 'react';
 import classes from './MyPosts.module.css'
 import Post from "./post/Post";
+import {TypeAppMyPostsDataProps} from "../../../App";
 
-const MyPosts = () => {
+type TypeDialogsProps = {
+    myPostsData: Array<TypeAppMyPostsDataProps>
+}
 
-    let myPostsData = [
-        {text: "Hi, how are you?"},
-        {text: "It's my first post."}
-    ]
+const MyPosts = (props: TypeDialogsProps) => {
 
     return (
         <div className={classes.myPostsBlock}>
@@ -20,7 +20,7 @@ const MyPosts = () => {
             </div>
 
             <div className={classes.posts}>
-                {myPostsData.map(post => (<Post message={post.text}/>))
+                {props.myPostsData.map(post => (<Post message={post.text}/>))
                 }
             </div>
         </div>

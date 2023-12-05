@@ -2,12 +2,18 @@ import React from 'react';
 import classes from './Profile.module.css'
 import MyPosts from "./myPosts/MyPosts";
 import {ProfileInfo} from "./profileInfo/ProfileInfo";
+import {TypeAppMyPostsDataProps} from "../../App";
 
-const Profile = () => {
+type TypeDialogsProps = {
+    myPostsData: Array<TypeAppMyPostsDataProps>
+}
+
+const Profile = (props: TypeDialogsProps) => {
+
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts myPostsData = {props.myPostsData}/>
         </div>
     );
 };
