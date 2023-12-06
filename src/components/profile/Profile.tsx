@@ -2,18 +2,17 @@ import React from 'react';
 import classes from './Profile.module.css'
 import MyPosts from "./myPosts/MyPosts";
 import {ProfileInfo} from "./profileInfo/ProfileInfo";
-import {TypeAppMyPostsDataProps} from "../../App";
+import {ProfilePageType} from "../../redux/State";
 
-type TypeDialogsProps = {
-    myPostsData: Array<TypeAppMyPostsDataProps>
+type ProfileType = {
+    state: ProfilePageType
 }
-
-const Profile = (props: TypeDialogsProps) => {
+const Profile = (props: ProfileType) => {
 
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts myPostsData = {props.myPostsData}/>
+            <MyPosts myPostsData = {props.state.myPostsData}/>
         </div>
     );
 };

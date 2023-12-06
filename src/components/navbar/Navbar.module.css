@@ -12,3 +12,7 @@
 .item a.activeLink {
     color: gold;
 }
+
+.friends {
+    padding: 20px;
+}

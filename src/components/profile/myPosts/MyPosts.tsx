@@ -1,13 +1,9 @@
 import React from 'react';
 import classes from './MyPosts.module.css'
 import Post from "./post/Post";
-import {TypeAppMyPostsDataProps} from "../../../App";
+import {ProfilePageType} from "../../../redux/State";
 
-type TypeDialogsProps = {
-    myPostsData: Array<TypeAppMyPostsDataProps>
-}
-
-const MyPosts = (props: TypeDialogsProps) => {
+const MyPosts = (props: ProfilePageType) => {
 
     return (
         <div className={classes.myPostsBlock}>
